@@ -26,7 +26,6 @@ There will be some reading for this course; I will often point you to documentat
 | --------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Assignments                       | 50%     | Assignments will be weighted equally. They will be given most weeks and cover the content learned that week; there will be between 7 and 10 assignments        |
 | Final Project Implementation Plan | 5%      | Students will form groups and propose a final project idea, and what technologies they will implement in it.                                                   |
-| Database Proposal                 | 5%      | Each group will submit a proposal for their database collections and schema                                                                                    |
 | Final Project Result & Code       | 45%     | Each group will submit their project code, a readme, and a database dump to be reviewed and graded based on what was promised in their proposal and delivered. |
 
 ### Other Notes
@@ -35,9 +34,9 @@ Late assignments are graded with a **_15 point penalty per day_**. Furthermore, 
 
 Obviously, "life happens"; if you require additional time to complete an assignment or a life situation happens, let me know and I will consider an extension. The more time in advance you let me know about your extension request, the more likely I am to grant the extension.
 
-### Assignment Instructions Are Very Explicit
+### Assignment Instructions Are Intentionally Open Ended
 
-Your assignments come with very explicit instructions. Things that may seem trivial to you (wording in print statements, for example) are most definitely important to the grading drivers that assist in generating your grades. If you have any questions about ambiguous instructions, please post in the discussion thread and I will clarify it and re-adjust the assignment to clarify those instructions for all students.
+Unlike CS-546, this course is more open ended. The end goal is to master the advanced concepts and fulfill requirements, rather than focus on mastering individual technologies.
 
 ### Misc.
 
