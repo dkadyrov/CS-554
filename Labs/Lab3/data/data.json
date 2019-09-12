@@ -1,0 +1,14 @@
+[{
+    "id": 1,
+    "title": "Project 1",
+    "image": "https://cdn.pixabay.com/photo/2015/05/15/14/38/computer-768608_960_720.jpg",
+    "description": "blah blah blah",
+    "detail": "blah blah blah"
+},
+{
+    "id": 2,
+    "title": "Project 2",
+    "image": "https://cdn.pixabay.com/photo/2015/05/15/14/38/computer-768608_960_720.jpg",
+    "description": "blah blah blah",
+    "detail": "blah blah blah"
+}]

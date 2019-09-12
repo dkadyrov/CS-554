@@ -4,30 +4,29 @@
   "description": "CS-554 Lab 3",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "build": "gulp build"
   },
   "author": "Daniel Kadyrov 10455680",
   "license": "ISC",
   "devDependencies": {
-    "bootstrap": "^4.0.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean-css": "^2.0.12",
+    "bootstrap": "^4.3.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.0",
+    "gulp-clean-css": "^4.2.0",
     "gulp-concat": "^2.6.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.6.0",
-    "jquery": "^3.1.1",
-    "tether": "^1.4.0"
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "jquery": "^3.4.1",
+    "tether": "^1.4.7"
   },
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "handlebars": "^4.0.5",
-    "mongodb": "^2.1.18",
-    "node-uuid": "^1.4.7",
-    "xss": "^0.2.13"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "gulp-minify": "^3.1.0",
+    "handlebars": "^4.2.0",
+    "tota11y": "^0.1.6"
   }
 }

@@ -1,27 +1,59 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass = require('gulp-sass');
-//convert scss files to css
-gulp.task('sass',function(){
-return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'])
-  .pipe(sass())
-  .pipe(gulp.dest('src/css'))
-  .pipe(browserSync.stream());
+const gulp = require("gulp");
+const concatenate = require("gulp-concat");
+const cleanCSS = require("gulp-clean-css");
+const autoPrefix = require("gulp-autoprefixer");
+const gulpSASS = require("gulp-sass");
+const rename = require("gulp-rename");
+const minify = require("gulp-minify")
+
+const sassFiles = [
+  "./node_modules/tether/dist/css/tether.css",
+  "./src/styles/variables.scss",
+  "./src/styles/custom.scss"
+];
+
+
+const vendorJsFiles = [
+  "./node_modules/jquery/dist/jquery.min.js",
+  "./node_modules/tether/dist/js/tether.min.js",
+  "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+];
+
+// Mod gulp task async for proper callback
+gulp.task("sass", async () => {
+  gulp
+    .src(sassFiles)
+    .pipe(gulpSASS())
+    .pipe(concatenate("styles.css"))
+    .pipe(gulp.dest("./public/css/"))
+    .pipe(
+      autoPrefix({
+        overrideBrowserslist: ["last 2 versions"],
+        cascade: false
+      })
+    )
+    .pipe(cleanCSS())
+    .pipe(rename("styles.min.css"))
+    .pipe(gulp.dest("./public/css/"));
 });
-//move js files to the src
-gulp.task('js',function(){
-return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js','node_modules/popper.js/dist/popper.min.js', 'node_modules/jquery/dist/jquery.min.js' ])
-  .pipe(gulp.dest('src/js'))
-  .pipe(browserSync.stream());
+
+
+// Mod gulp task async for proper callback
+gulp.task("js:vendor", async () => {
+  gulp
+    .src(vendorJsFiles)
+    .pipe(concatenate("vendor.min.js"))
+    .pipe(gulp.dest("./public/js/"));
+  // .pipe(cleanCSS())
+  // .pipe(rename("bootstrap.min.js"))
+  // .pipe(gulp.dest("./public/js/"));
 });
-//server implementation
-gulp.task('serve',['sass'],function(){
-  browserSync.init({
-  server:"./src"
+
+// Altered for gulp v4, use gulp.series and gulp.parralel
+gulp.task("build", gulp.series("sass", "js:vendor"));
+
+gulp.task("watch", () => {
+  gulp.watch(sassFiles, gulp.series("sass"));
 });
-gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass']);
-  
-   gulp.watch('src/*.html').on('change', browserSync.reload);
-});
-//start server
-gulp.task('default',['js','serve']);
+
+gulp.task("default", gulp.series("watch"));

@@ -1,0 +1,77 @@
+// @import "variables";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// @mixin border-bottom($size) {
+//     border-bottom: $size solid #000;
+// }
+
+// * {
+//     box-sizing: border-box;
+// }
+
+// body,
+// html {
+//     background: $body-background;
+//     color: darken($brand-primary, 20%);
+//     font-family: Arial, Helvetica, sans-serif;
+//     font-size: $primary-font-size;
+//     background-clip: border-box;
+// }
+
+// p {
+//     font-size: $secondary-font-size;
+// }
+
+// .navbar {
+//     margin: 0;
+//     padding: 0;
+//     width: 140px;
+//     background-color: $sub-background;
+//     position: fixed;
+//     height: 100%;
+//     overflow: auto;
+// }
+
+// .navbar-item a {
+//     display: block;
+//     color: white;
+//     padding: 16px;
+// }
+
+// .container {
+//     margin-left: 140px;
+//     padding: 1px 16px;
+//     //  height: 1000px;
+// }
+
+// // On smallest sccreen size place navbar on top
+// @media screen and (max-width: 576px) {
+//     .navbar {
+//         width: 100%;
+//         height: auto;
+//         position: relative;
+//     }
+
+//     .navbar-item a {
+//         text-align: center;
+//         float: none;
+//     }
+
+//     .container {
+//         margin-left: 0;
+//     }
+// }
+
+// .card {
+//     background: $sub-background;
+// }
+
+
+// .card * {
+//     color: $brand-primary;
+// }
+
+// .modal-title,
+// .modal-body {
+//     color: black;
+// }
