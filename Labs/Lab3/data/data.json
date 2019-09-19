@@ -1,14 +1,72 @@
 [{
-    "id": 1,
-    "title": "Project 1",
-    "image": "https://cdn.pixabay.com/photo/2015/05/15/14/38/computer-768608_960_720.jpg",
-    "description": "blah blah blah",
-    "detail": "blah blah blah"
-},
-{
-    "id": 2,
-    "title": "Project 2",
-    "image": "https://cdn.pixabay.com/photo/2015/05/15/14/38/computer-768608_960_720.jpg",
-    "description": "blah blah blah",
-    "detail": "blah blah blah"
-}]
+        "id": 1,
+        "title": "CS541",
+        "image": "/public/images/cs541.jpg",
+        "description": "Artificial Intelligence",
+        "detail": "Course on Artificial Intelligence. I have not started or completed it yet.",
+        "photo": "Photo by Franck V.on Unsplash"
+    },
+    {
+        "id": 2,
+        "title": "CS546",
+        "image": "/public/images/cs546.jpg",
+        "description": "Web Programming I",
+        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites. <br> Photo by Sai Kiran Anagani on Unsplash "
+    },
+    {
+        "id": 3,
+        "title": "CS549",
+        "image": "/public/images/cs549.jpg",
+        "description": "Distributed Systems and Cloud Computing",
+        "detail": "Course on distributed environments. I have not started or completed it yet. "
+    },
+    {
+        "id": 4,
+        "title": "CS550",
+        "image": "/public/images/cs550.jpg",
+        "description": "Computer Organization",
+        "detail": "Photo by Taylor Vick on Unsplash"
+    },
+    {
+        "id": 5,
+        "title": "CS554",
+        "image": "/public/images/cs554.jpg",
+        "description": "Web Programming II",
+        "detail": "Photo by Pankaj Patel on Unsplash"
+    },
+    {
+        "id": 6,
+        "title": "CS559",
+        "image": "/public/images/cs559.jpg",
+        "description": "Machine Learning: Fundamentals and Applications",
+        "detail": "Photo by Franck V. on Unsplash"
+    },
+    {
+        "id": 7,
+        "title": "CS570",
+        "image": "/public/images/cs570.jpg",
+        "description": "Programming, Data Structures, and Algorithms",
+        "detail": "Photo by Markus Spiske on Unsplash"
+    },
+    {
+        "id": 8,
+        "title": "CS582",
+        "image": "/public/images/cs582.jpg",
+        "description": "Casual Interference",
+        "detail": "blah blah blah"
+    },
+    {
+        "id": 9,
+        "title": "CS583",
+        "image": "/public/images/cs583.jpg",
+        "description": "Deep Learning",
+        "detail": "blah blah blah"
+    },
+    {
+        "id": 10,
+        "title": "CS597",
+        "image": "/public/images/cs597.jpg",
+        "description": "User Experience Design and Programming",
+        "detail": "blah blah blah"
+    }
+]

@@ -1,77 +1,77 @@
 // @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// @mixin border-bottom($size) {
-//     border-bottom: $size solid #000;
-// }
+h2 {
+  font-size: 15pt;
+}
 
-// * {
-//     box-sizing: border-box;
-// }
+body {
+  @include media-breakpoint-up(md) {
+    padding-top: 20px;
+    margin-left: 232px;
+  }
 
-// body,
-// html {
-//     background: $body-background;
-//     color: darken($brand-primary, 20%);
-//     font-family: Arial, Helvetica, sans-serif;
-//     font-size: $primary-font-size;
-//     background-clip: border-box;
-// }
+  padding-top: 90px;
+}
 
-// p {
-//     font-size: $secondary-font-size;
-// }
+.card {
+  margin: 5px;
+}
 
-// .navbar {
-//     margin: 0;
-//     padding: 0;
-//     width: 140px;
-//     background-color: $sub-background;
-//     position: fixed;
-//     height: 100%;
-//     overflow: auto;
-// }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $zindex-fixed;
 
-// .navbar-item a {
-//     display: block;
-//     color: white;
-//     padding: 16px;
-// }
+  @include media-breakpoint-up(md) {
+    bottom: 0;
+    width: 232px;
+    flex-flow: column nowrap;
+    align-items: flex-start;
 
-// .container {
-//     margin-left: 140px;
-//     padding: 1px 16px;
-//     //  height: 1000px;
-// }
+    .navbar-collapse {
+      flex-grow: 0;
+      flex-direction: column;
+      width: 100%;
 
-// // On smallest sccreen size place navbar on top
-// @media screen and (max-width: 576px) {
-//     .navbar {
-//         width: 100%;
-//         height: auto;
-//         position: relative;
-//     }
+      .navbar-nav {
+        flex-direction: column;
+        width: 100%;
 
-//     .navbar-item a {
-//         text-align: center;
-//         float: none;
-//     }
+        .nav-item {
+          width: 100%;
 
-//     .container {
-//         margin-left: 0;
-//     }
-// }
+          .dropdown-toggle {
+            &:after {
+              border-top: $caret-width solid transparent;
+              border-left: $caret-width solid;
+              border-bottom: $caret-width solid transparent;
+              border-right: none;
+              vertical-align: baseline;
+            }
+          }
 
-// .card {
-//     background: $sub-background;
-// }
+          .dropdown-menu {
+            left: 100%;
+          }
+        }
+      }
+    }
+  }
+}
 
+.card-columns {
+  @include media-breakpoint-up(sm) {
+    column-count: 1;
+  }
 
-// .card * {
-//     color: $brand-primary;
-// }
+  @include media-breakpoint-up(md) {
+    column-count: 2;
+  }
 
-// .modal-title,
-// .modal-body {
-//     color: black;
-// }
+  @include media-breakpoint-up(lg) {
+    column-count: 3;
+  }
+}

@@ -8,23 +8,54 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 id="the-heading">Product Portfolio</h1>
-        <section class="row">
-            <nav class="col-sm-12 col-md-4">
-                nav here
-            </nav>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+        <a class="navbar-brand" href="">SIT Coursework</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <main class="col-sm-12 col-md-8">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav">
                 {{#each data}}
-                    {{> item}}
+                <li class="nav-item">
+                    <a class="nav-link" href="#{{{this.title}}}">{{this.title}}</a>
+                </li>
                 {{/each}}
-            </main>
-        </section>
+            </ul>
+        </div>
+    </nav>
+
+    {{!-- <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <a class="navbar-brand" href="">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+
+            </ul>
+        </div>
+    </nav> --}}
+
+
+    <div class="container">
+        {{!-- <h1 id="the-heading">Product Portfolio</h1> --}}
+        {{!-- <section class="card-columns"> --}}
+        <div class="card-columns">
+            {{!-- <div class="cards"> --}}
+            {{#each data}}
+            {{> item}}
+            {{/each}}
+            {{!-- </div> --}}
+        </div>
+        {{!-- </section> --}}
     </div>
 
     <script src="/public/js/vendor.min.js"></script>
-    <script src="tota11y.min.js"></script>
+    <script src="../../node_modules/tota11y.min.js"></script>
 </body>
 
 </html>
