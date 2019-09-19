@@ -30,42 +30,60 @@
     {
         "id": 5,
         "title": "CS554",
-        "image": "/public/images/cs554.jpg",
+        "image": {
+            "file": "/public/images/cs554.jpg",
+            "url": "Photo by Pankaj Patel on Unsplash"
+        },
         "description": "Web Programming II",
-        "detail": "Photo by Pankaj Patel on Unsplash"
+        "detail": ""
     },
     {
         "id": 6,
         "title": "CS559",
-        "image": "/public/images/cs559.jpg",
+        "image": {
+            "file": "/public/images/cs559.jpg",
+            "url": "Photo by Franck V. on Unsplash"
+        },
         "description": "Machine Learning: Fundamentals and Applications",
-        "detail": "Photo by Franck V. on Unsplash"
+        "detail": ""
     },
     {
         "id": 7,
         "title": "CS570",
-        "image": "/public/images/cs570.jpg",
+        "image": {
+            "file": "/public/images/cs570.jpg",
+            "url": "Photo by Markus Spiske on Unsplash"
+        },
         "description": "Programming, Data Structures, and Algorithms",
-        "detail": "Photo by Markus Spiske on Unsplash"
+        "detail": ""
     },
     {
         "id": 8,
         "title": "CS582",
-        "image": "/public/images/cs582.jpg",
+        "image": {
+            "file": "/public/images/cs582.jpg",
+            "url": "Photo by Mike Lewinski on Unsplash",
+        }
         "description": "Casual Interference",
         "detail": "blah blah blah"
     },
     {
         "id": 9,
         "title": "CS583",
-        "image": "/public/images/cs583.jpg",
+        "image": {
+            "file": "/public/images/cs583.jpg",
+            "url": "Photo by Tim Gouw on Unsplash"
+        },
         "description": "Deep Learning",
         "detail": "blah blah blah"
     },
     {
         "id": 10,
         "title": "CS597",
-        "image": "/public/images/cs597.jpg",
+        "image": {
+            "file": "/public/images/cs597.jpg",
+            "url": "Photo by Alvaro Reyes on Unsplash"
+        },
         "description": "User Experience Design and Programming",
         "detail": "blah blah blah"
     }
