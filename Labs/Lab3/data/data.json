@@ -1,7 +1,10 @@
 [{
         "id": 1,
         "title": "CS541",
-        "image": "/public/images/cs541.jpg",
+        "image": {
+            "file": "/public/images/cs541.jpg",
+            "url": "No URL"
+        },
         "description": "Artificial Intelligence",
         "detail": "Course on Artificial Intelligence. I have not started or completed it yet.",
         "photo": "Photo by Franck V.on Unsplash"
@@ -9,21 +12,30 @@
     {
         "id": 2,
         "title": "CS546",
-        "image": "/public/images/cs546.jpg",
+        "image": {
+            "file": "/public/images/cs546.jpg",
+            "url": "No URL"
+        },
         "description": "Web Programming I",
         "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites. <br> Photo by Sai Kiran Anagani on Unsplash "
     },
     {
         "id": 3,
         "title": "CS549",
-        "image": "/public/images/cs549.jpg",
+        "image": {
+            "file": "/public/images/cs549.jpg",
+            "url": "No URL"
+        },
         "description": "Distributed Systems and Cloud Computing",
         "detail": "Course on distributed environments. I have not started or completed it yet. "
     },
     {
         "id": 4,
         "title": "CS550",
-        "image": "/public/images/cs550.jpg",
+        "image": {
+            "file": "/public/images/cs550.jpg",
+            "url": "No URL"
+        },
         "description": "Computer Organization",
         "detail": "Photo by Taylor Vick on Unsplash"
     },
@@ -62,8 +74,8 @@
         "title": "CS582",
         "image": {
             "file": "/public/images/cs582.jpg",
-            "url": "Photo by Mike Lewinski on Unsplash",
-        }
+            "url": "Photo by Mike Lewinski on Unsplash"
+        },
         "description": "Casual Interference",
         "detail": "blah blah blah"
     },

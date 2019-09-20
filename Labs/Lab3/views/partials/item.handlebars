@@ -1,5 +1,5 @@
 <div class="card mb-4" id="{{this.title}}">
-    <img class="card-img-top" src="{{this.image}}" alt="{{this.title}} Image">
+    <img class="card-img-top" src="{{this.image.file}}" alt="{{this.title}} Image">
     <div class="card-body">
         <h2>{{this.title}}</h2>
         <p>{{this.description}}</p>
@@ -22,6 +22,8 @@
             </div>
             <div class="modal-body">
                 {{{this.detail}}}
+                <br>
+                {{{this.url}}}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
