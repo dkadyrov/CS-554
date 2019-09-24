@@ -3,21 +3,20 @@
         "title": "CS541",
         "image": {
             "file": "/public/images/cs541.jpg",
-            "url": "No URL"
+            "url": "Photo by Franck V.on Unsplash"
         },
         "description": "Artificial Intelligence",
         "detail": "Course on Artificial Intelligence. I have not started or completed it yet.",
-        "photo": "Photo by Franck V.on Unsplash"
     },
     {
         "id": 2,
         "title": "CS546",
         "image": {
             "file": "/public/images/cs546.jpg",
-            "url": "No URL"
+            "url": "Photo by Sai Kiran Anagani on Unsplash"
         },
         "description": "Web Programming I",
-        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites. <br> Photo by Sai Kiran Anagani on Unsplash "
+        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites.",
     },
     {
         "id": 3,
@@ -27,17 +26,17 @@
             "url": "No URL"
         },
         "description": "Distributed Systems and Cloud Computing",
-        "detail": "Course on distributed environments. I have not started or completed it yet. "
+        "detail": "Course on distributed environments. I have not started or completed it yet."
     },
     {
         "id": 4,
         "title": "CS550",
         "image": {
             "file": "/public/images/cs550.jpg",
-            "url": "No URL"
+            "url": "Photo by Taylor Vick on Unsplash"
         },
         "description": "Computer Organization",
-        "detail": "Photo by Taylor Vick on Unsplash"
+        "detail": "",
     },
     {
         "id": 5,
@@ -47,7 +46,6 @@
             "url": "Photo by Pankaj Patel on Unsplash"
         },
         "description": "Web Programming II",
-        "detail": ""
     },
     {
         "id": 6,
