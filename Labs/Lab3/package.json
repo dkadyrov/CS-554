@@ -26,7 +26,6 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "gulp-minify": "^3.1.0",
-    "handlebars": "^4.2.0",
-    "tota11y": "^0.1.6"
+    "handlebars": "^4.2.0"
   }
 }

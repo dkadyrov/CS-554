@@ -1,7 +1,6 @@
-// @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-h2 {
+h1 {
   font-size: 15pt;
 }
 
@@ -18,12 +17,18 @@ body {
   margin: 5px;
 }
 
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: $zindex-fixed;
+
+  .navbar-nav .nav-link {
+    color: black;
+  }
+
 
   @include media-breakpoint-up(md) {
     bottom: 0;

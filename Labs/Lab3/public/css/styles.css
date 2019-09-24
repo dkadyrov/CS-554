@@ -7031,7 +7031,7 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-h2 {
+h1 {
   font-size: 15pt; }
 
 body {
@@ -7050,6 +7050,8 @@ body {
   left: 0;
   right: 0;
   z-index: 1030; }
+  .navbar .navbar-nav .nav-link {
+    color: black; }
   @media (min-width: 768px) {
     .navbar {
       bottom: 0;

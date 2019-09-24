@@ -3,10 +3,10 @@
         "title": "CS541",
         "image": {
             "file": "/public/images/cs541.jpg",
-            "url": "Photo by Franck V.on Unsplash"
+            "url": "Photo by Franck V. on Unsplash"
         },
         "description": "Artificial Intelligence",
-        "detail": "Course on Artificial Intelligence. I have not started or completed it yet.",
+        "detail": "Course on Artificial Intelligence. I have not started or completed it yet."
     },
     {
         "id": 2,
@@ -16,14 +16,14 @@
             "url": "Photo by Sai Kiran Anagani on Unsplash"
         },
         "description": "Web Programming I",
-        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites.",
+        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites."
     },
     {
         "id": 3,
         "title": "CS549",
         "image": {
             "file": "/public/images/cs549.jpg",
-            "url": "No URL"
+            "url": "Photo by imgix on Unsplash"
         },
         "description": "Distributed Systems and Cloud Computing",
         "detail": "Course on distributed environments. I have not started or completed it yet."
@@ -36,7 +36,7 @@
             "url": "Photo by Taylor Vick on Unsplash"
         },
         "description": "Computer Organization",
-        "detail": "",
+        "detail": "Course on Computer Organization including structure of computers, assembly language programming, and computer history"
     },
     {
         "id": 5,
@@ -46,6 +46,7 @@
             "url": "Photo by Pankaj Patel on Unsplash"
         },
         "description": "Web Programming II",
+        "detail": "Course on Web Programming including advanced client side programming, responsive design, NoSQL databases, JQuery, AJAX, and the latest frameworks"
     },
     {
         "id": 6,
@@ -55,7 +56,7 @@
             "url": "Photo by Franck V. on Unsplash"
         },
         "description": "Machine Learning: Fundamentals and Applications",
-        "detail": ""
+        "detail": "Course on Machine Learning. I have not started or completed it yet."
     },
     {
         "id": 7,
@@ -65,7 +66,7 @@
             "url": "Photo by Markus Spiske on Unsplash"
         },
         "description": "Programming, Data Structures, and Algorithms",
-        "detail": ""
+        "detail": "Course on Algorithms and Data Structures using Java."
     },
     {
         "id": 8,
@@ -75,7 +76,7 @@
             "url": "Photo by Mike Lewinski on Unsplash"
         },
         "description": "Casual Interference",
-        "detail": "blah blah blah"
+        "detail": "Course on Casual Interference. I have not started or completed it yet."
     },
     {
         "id": 9,
@@ -85,7 +86,7 @@
             "url": "Photo by Tim Gouw on Unsplash"
         },
         "description": "Deep Learning",
-        "detail": "blah blah blah"
+        "detail": "Course on Deep Learning. I have not started or completed it yet."
     },
     {
         "id": 10,
@@ -95,6 +96,6 @@
             "url": "Photo by Alvaro Reyes on Unsplash"
         },
         "description": "User Experience Design and Programming",
-        "detail": "blah blah blah"
+        "detail": "Course on UI Design. I have not started or completed it yet."
     }
 ]

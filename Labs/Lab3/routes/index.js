@@ -9,7 +9,7 @@ const constructorMethod = app => {
   });
 
   app.use("*", (req, res) => {
-    res.status(404).render("err/404");
+    res.render("err/404");
   });
 };
 
