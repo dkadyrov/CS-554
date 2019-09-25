@@ -1,0 +1,27 @@
+{
+  "name": "kadyrov_daniel_4",
+  "version": "1.0.0",
+  "description": "CS554 Assignment 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "webpack-dev-server"
+  },
+  "author": "Daniel Kadyrov 10455680",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "showdown": "^1.9.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-syntax-class-properties": "^7.2.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
+}
