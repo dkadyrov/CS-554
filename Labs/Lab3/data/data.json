@@ -6,7 +6,9 @@
             "url": "Photo by Franck V. on Unsplash"
         },
         "description": "Artificial Intelligence",
-        "detail": "Course on Artificial Intelligence. I have not started or completed it yet."
+        "detail": "Course on Artificial Intelligence. I have not started or completed it yet.",
+        "grade": "",
+        "projects": []
     },
     {
         "id": 2,
@@ -16,7 +18,9 @@
             "url": "Photo by Sai Kiran Anagani on Unsplash"
         },
         "description": "Web Programming I",
-        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites."
+        "detail": "Course on the basics of web programming including using HTML, CSS, and JavaScript with packages like Node, Express, and Handlebars to build websites.",
+        "grade": "A-",
+        "projects": ["iBlog"]
     },
     {
         "id": 3,
@@ -26,7 +30,9 @@
             "url": "Photo by imgix on Unsplash"
         },
         "description": "Distributed Systems and Cloud Computing",
-        "detail": "Course on distributed environments. I have not started or completed it yet."
+        "detail": "Course on distributed environments. I have not started or completed it yet.",
+        "grade": "",
+        "projects": []
     },
     {
         "id": 4,
@@ -36,7 +42,9 @@
             "url": "Photo by Taylor Vick on Unsplash"
         },
         "description": "Computer Organization",
-        "detail": "Course on Computer Organization including structure of computers, assembly language programming, and computer history"
+        "detail": "Course on Computer Organization including structure of computers, assembly language programming, and computer history",
+        "grade": "A",
+        "projects": ["Smart Cards - Research Paper"]
     },
     {
         "id": 5,
@@ -46,7 +54,9 @@
             "url": "Photo by Pankaj Patel on Unsplash"
         },
         "description": "Web Programming II",
-        "detail": "Course on Web Programming including advanced client side programming, responsive design, NoSQL databases, JQuery, AJAX, and the latest frameworks"
+        "detail": "Course on Web Programming including advanced client side programming, responsive design, NoSQL databases, JQuery, AJAX, and the latest frameworks",
+        "grade": "",
+        "projects": ["SIT Portfolio Website"]
     },
     {
         "id": 6,
@@ -66,7 +76,9 @@
             "url": "Photo by Markus Spiske on Unsplash"
         },
         "description": "Programming, Data Structures, and Algorithms",
-        "detail": "Course on Algorithms and Data Structures using Java."
+        "detail": "Course on Algorithms and Data Structures using Java.",
+        "grade": "",
+        "projects": []
     },
     {
         "id": 8,
@@ -76,7 +88,9 @@
             "url": "Photo by Mike Lewinski on Unsplash"
         },
         "description": "Casual Interference",
-        "detail": "Course on Casual Interference. I have not started or completed it yet."
+        "detail": "Course on Casual Interference. I have not started or completed it yet.",
+        "grade": "",
+        "projects": []
     },
     {
         "id": 9,
@@ -86,7 +100,9 @@
             "url": "Photo by Tim Gouw on Unsplash"
         },
         "description": "Deep Learning",
-        "detail": "Course on Deep Learning. I have not started or completed it yet."
+        "detail": "Course on Deep Learning. I have not started or completed it yet.",
+        "grade": "",
+        "projects": []
     },
     {
         "id": 10,
@@ -96,6 +112,8 @@
             "url": "Photo by Alvaro Reyes on Unsplash"
         },
         "description": "User Experience Design and Programming",
-        "detail": "Course on UI Design. I have not started or completed it yet."
+        "detail": "Course on UI Design. I have not started or completed it yet.",
+        "grade": "",
+        "projects": []
     }
 ]
