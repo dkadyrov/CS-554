@@ -12,7 +12,7 @@
 
 <div class="modal fade" id="modal{{this.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="exampleModalLabel">{{this.title}} - {{this.description}}</h2>
@@ -24,10 +24,19 @@
                 <p>
                     {{{this.detail}}}
                 </p>
-                <br>
-                {{{this.image.url}}}
+
+                <b>Grade:</b> {{this.grade}} <br>
+                <b>Projects: </b>
+                <ul>
+                    {{#each this.projects}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
             </div>
             <div class="modal-footer">
+                <div class="mr-auto">
+                    {{{this.image.url}}}
+                </div>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>

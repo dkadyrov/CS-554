@@ -1,7 +1,7 @@
 {
-  "name": "kadyrov_daniel_lab3",
+  "name": "kadyrov_daniel_3",
   "version": "1.0.0",
-  "description": "CS-554 Lab 3",
+  "description": "CS-554 Assignment 3",
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
