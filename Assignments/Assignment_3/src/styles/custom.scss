@@ -6,22 +6,19 @@
 @import "node_modules/bootstrap/scss/mixins";
 
 // Additional
-@import "node_modules/bootstrap/scss/reboot";
-@import "node_modules/bootstrap/scss/bootstrap-grid";
-@import "node_modules/bootstrap/scss/card";
-@import "node_modules/bootstrap/scss/modal";
-@import "node_modules/bootstrap/scss/navbar";
-@import "node_modules/bootstrap/scss/nav";
-@import "node_modules/bootstrap/scss/buttons";
-@import "node_modules/bootstrap/scss/button-group";
-@import "node_modules/bootstrap/scss/type";
-@import "node_modules/bootstrap/scss/dropdown";
-@import "node_modules/bootstrap/scss/media";
-@import "node_modules/bootstrap/scss/utilities/text";
-@import "node_modules/bootstrap/scss/code";
-
-
-
+@import "node_modules/bootstrap/scss/buttons.scss";
+@import "node_modules/bootstrap/scss/card.scss";
+@import "node_modules/bootstrap/scss/close.scss";
+@import "node_modules/bootstrap/scss/dropdown.scss";
+@import "node_modules/bootstrap/scss/grid.scss";
+@import "node_modules/bootstrap/scss/media.scss";
+@import "node_modules/bootstrap/scss/modal.scss";
+@import "node_modules/bootstrap/scss/nav.scss";
+@import "node_modules/bootstrap/scss/navbar.scss";
+@import "node_modules/bootstrap/scss/reboot.scss";
+@import "node_modules/bootstrap/scss/transitions.scss";
+@import "node_modules/bootstrap/scss/type.scss";
+@import "node_modules/bootstrap/scss/utilities.scss";
 
 body {
   @include media-breakpoint-up(md) {
@@ -37,6 +34,16 @@ body {
 
   h1 {
     font-size: 15pt;
+  }
+
+
+}
+
+h2 {
+  font-size: 17.5pt;
+
+  @include media-breakpoint-up(md) {
+    font-size: 20pt;
   }
 }
 
@@ -93,6 +100,8 @@ body {
 }
 
 .card-columns {
+  // align-content: flex-start;
+
   @include media-breakpoint-up(sm) {
     column-count: 1;
   }
