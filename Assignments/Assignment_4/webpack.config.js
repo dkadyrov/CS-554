@@ -3,6 +3,10 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+            },
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
@@ -21,8 +25,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
+            inject: true,
             template: "./src/index.html",
-            filename: "index.html"
+            // filename: "index.html"
         })
     ]
 };

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Input from "../presentational/Input.jsx.js.js";
+import Input from "../presentational/Input.jsx";
+import Preview from "../presentational/Preview.jsx"
 class FormContainer extends Component {
     constructor() {
         super();
         this.state = {
-            seo_title: ""
+            editor_text: ""
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -13,22 +14,21 @@ class FormContainer extends Component {
         this.setState({ [event.target.id]: event.target.value });
     }
     render() {
-        const { seo_title } = this.state;
+        const { editor_text } = this.state;
         return (
-            <form id="article-form">
+            <form id="editor">
                 <Input
-                    text="SEO title"
-                    label="seo_title"
+                    // text="SEO title"
+                    label="editor_label"
                     type="text"
-                    id="seo_title"
-                    value={seo_title}
+                    id="editor_text"
+                    value={editor_text}
                     handleChange={this.handleChange}
                 />
             </form>
         );
     }
 }
-export default FormContainer;
 
-// const wrapper = document.getElementById("create-article-form");
-// wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;
+const wrapper = document.getElementById("editor");
+wrapper ? ReactDOM.render(<FormContainer />, wrapper) : false;
