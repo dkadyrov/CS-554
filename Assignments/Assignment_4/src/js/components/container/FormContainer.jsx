@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Input from "../presentational/Input.jsx";
-import Preview from "../presentational/Preview.jsx"
+import Preview from "./preview.jsx"
+
 class FormContainer extends Component {
     constructor() {
         super();
@@ -17,7 +18,7 @@ class FormContainer extends Component {
         const { editor_text } = this.state;
         return (
             <form id="editor">
-                <Input
+                <textarea
                     // text="SEO title"
                     label="editor_label"
                     type="text"
