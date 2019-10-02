@@ -1,6 +1,7 @@
-h1 { 
+.title { 
     text-align: center;
     padding: 20px;
+    font-size: 30px;
 }
 
 .editor {
@@ -13,4 +14,8 @@ h1 {
 .card {
     height: 80vh;
     width: 100%;
+}
+
+.button {
+    margin: 20px;
 }

@@ -1,6 +1,10 @@
-// import FormContainer from "./js/components/preview.js/index.js";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './css/custom.css';
+import App from "./js/components/App.js";
 
-import App from "./js/components/app.jsx";
+ReactDOM.render(< App />, document.getElementById("app"));
 
-ReactDOM.render( < App / > , document.getElementById("app"));
+if (module.hot) {
+    module.hot.accept();
+}
