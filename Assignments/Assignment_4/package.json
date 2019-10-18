@@ -1,13 +1,13 @@
 {
-  "name": "assignment_4",
+  "name": "cs-546-assignment-4",
   "version": "1.0.0",
-  "description": "",
+  "description": "CS-554 Assignment 4",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
-  "author": "",
+  "author": "Daniel Kadyrov 10455680",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.2",
