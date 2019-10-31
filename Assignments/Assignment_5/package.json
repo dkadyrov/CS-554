@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "flush": "node flush.js"
   },
   "author": "Daniel Kadyrov 10455680",
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.7.1",
     "express": "^4.17.1",
-    "flat": "^4.1.0",
-    "node-redis": "^0.1.7",
     "redis": "^2.8.0"
   }
 }

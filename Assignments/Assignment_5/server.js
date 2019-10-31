@@ -1,33 +1,32 @@
 const bluebird = require("bluebird");
 const express = require("express");
-const app = express();
 const redis = require("redis");
 const getById = require("./data/data")
+
+const app = express();
 
 bluebird.promisifyAll(redis);
 
 const client = redis.createClient();
 const visitor = "persons:id:list"
 
-
-
-app.get("/api/people/history", async(req, res) => {
+app.get("/api/people/history", async (req, res) => {
   let people;
   try {
     people = await client.lrangeAsync(visitor, 0, 19);
   }
-  catch(error){
-    res.send({status: error.message});
+  catch (error) {
+    res.send({ status: error.message });
     return
   }
 
-  let arr = []; 
+  let arr = [];
 
-  for (i=0; i < people.length; i++) {
+  for (i = 0; i < people.length; i++) {
     let person = await client.getAsync(people[i]);
     arr.push(JSON.parse(person));
   }
-  
+
   res.json(arr);
   return;
 });
@@ -61,7 +60,8 @@ app.get("/api/people/:id", async (req, res) => {
   }
   return;
 });
+
 app.listen(3000, () => {
-    console.log("We've now got a server!");
-    console.log("Your routes will be running on http://localhost:3000");
+  console.log("We've now got a server!");
+  console.log("Your routes will be running on http://localhost:3000");
 });
