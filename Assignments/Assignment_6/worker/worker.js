@@ -7,6 +7,7 @@ const url = "https://gist.githubusercontent.com/philbarresi/5cf15393d245b38a2d86
 async function main() {
     redisConnection.on("get-data", async(data, channel) => {
         const data = await axios.get(url).data;
+        
 
 
     })
