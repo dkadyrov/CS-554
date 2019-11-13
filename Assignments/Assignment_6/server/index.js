@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const redisConnection = require("../redis-connection");
-const worker = require("../worker/worker");
+const worker = require("../worker");
 
 const app = express();
 app.use(bodyParser.json());
