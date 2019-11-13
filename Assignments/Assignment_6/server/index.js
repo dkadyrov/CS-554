@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const redisConnection = require("../redis-connection");
+const nrpSender = require("../nrp-sender-shim");
 const worker = require("../worker");
 
 const app = express();
@@ -8,31 +9,34 @@ app.use(bodyParser.json());
 
 app.get("/api/people/:id", async (req, res) => {
     try {
-        let user = await clientInformation.getAsync(req.params.id);
-        let person = JSON.parse(user);
+        let response = await nrpSender.sendMessage({
+            redis: redisConnection,
+            eventName: "get-user",
+            data: {
+                message: req.params.id
+            },
+            expectsResponse: true
+        })
 
-        res.json(person);
+        res.json(response);
     } catch (error) {
         res.send({
             status: error.message
         });
-        return
     }
-})
+});
 
 app.post("/api/people", async (req, res) => {
     try {
         let response = await worker.sendMessage({
             redis: redisConnection,
-            eventName: "add-person",
+            eventName: "push-data",
             data: {
-                message: req.body.message
+                message: req.body
             },
-            expectResponse: false,
+            expectResponse: true,
         });
-        res.json({
-            sent: "person added"
-        });
+        res.json(response);
     } catch (error) {
         res.send({
             status: error.message
@@ -42,12 +46,42 @@ app.post("/api/people", async (req, res) => {
 });
 
 app.delete("/api/people/:id", async (req, res) => {
-
+    try {
+        let response = await worker.sendMessage({
+            redis: redisConnection,
+            eventName: "delete-data",
+            data: {
+                message: req.params.id
+            },
+            expectResponse: true,
+        });
+        res.json(response);
+    } catch (error) {
+        res.send({
+            status: error.message
+        });
+        return
+    }
 });
 
-app.put("/api/people/:id", async( req, res) => {
-
-
+app.put("/api/people/:id", async (req, res) => {
+    try {
+        let response = await worker.sendMessage({
+            redis: redisConnection,
+            eventName: "update-data",
+            data: {
+                message: req.params.id,
+                updates: req.body
+            },
+            expectResponse: true,
+        });
+        res.json(response);
+    } catch (error) {
+        res.send({
+            status: error.message
+        });
+        return
+    }
 });
 
 app.listen(3000, () => {
