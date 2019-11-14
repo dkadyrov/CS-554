@@ -290,7 +290,9 @@ async function main() {
             }
 
             for (let i = 0; i < persons.length; i++) {
-                if (String(updates[key]) == String(persons[i][key]) && String(updates[key]) !== id) {
+                if (String(updates[key]) == String(persons[i][key]) && String(updates[key]) != id) {
+                    console.log(updates[key])
+                    console.log(id)
                     redisConnection.emit(failedEvent, {
                         requestId,
                         eventName,
