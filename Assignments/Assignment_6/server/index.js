@@ -28,9 +28,9 @@ app.get("/api/people/:id", async (req, res) => {
 
 app.post("/api/people", async (req, res) => {
     try {
-        let response = await worker.sendMessage({
+        let response = await nrpSender.sendMessage({
             redis: redisConnection,
-            eventName: "push-data",
+            eventName: "push-user",
             data: {
                 message: req.body
             },
@@ -47,7 +47,7 @@ app.post("/api/people", async (req, res) => {
 
 app.delete("/api/people/:id", async (req, res) => {
     try {
-        let response = await worker.sendMessage({
+        let response = await nrpSender.sendMessage({
             redis: redisConnection,
             eventName: "delete-data",
             data: {
@@ -66,7 +66,7 @@ app.delete("/api/people/:id", async (req, res) => {
 
 app.put("/api/people/:id", async (req, res) => {
     try {
-        let response = await worker.sendMessage({
+        let response = await nrpSender.sendMessage({
             redis: redisConnection,
             eventName: "update-data",
             data: {

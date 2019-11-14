@@ -1,13 +1,18 @@
-const redisConnection = require("./redis-connection");
+const redis = require("redis");
 const axios = require("axios");
 const bluebird = require("bluebird");
+
+bluebird.promisifyAll(redis);
+
+const redisConnection = require("../redis-connection");
 
 const url = "https://gist.githubusercontent.com/philbarresi/5cf15393d245b38a2d86ce8207d5076c/raw/d529fb474c1af347702ca4d7b992256237fa2819/lab5.json";
 
 async function main() {
-    const persons = await axios.get(url).data;
+    const data = await axios.get(url);
+    const persons = data.data;
 
-    redisConnection.on("get-user:request:*", async (data, channel) => {
+    redisConnection.on("get-user:request:*", async (message, channel) => {
         let requestId = message.requestId;
         let eventName = message.eventName;
 
@@ -17,7 +22,7 @@ async function main() {
 
         const id = parseInt(messageText)
 
-        if (id <= 0 || id.isNaN()) {
+        if (id <= 0 || isNaN(id)) {
             redisConnection.emit(failedEvent, {
                 requestId,
                 eventName,
@@ -27,17 +32,17 @@ async function main() {
             })
         }
 
-        const person = {}
+        let person = {}
 
         for (let i = 0; i < persons.length; i++) {
-            if (String(user[i].id) === messageText) {
-                person = user[i];
+            if (String(persons[i].id) === messageText) {
+                person = persons[i];
                 break
             }
         }
 
         if (Object.keys(person).length === 0) {
-            redisConnection.emit(failedEvent {
+            redisConnection.emit(failedEvent, {
                 requestId,
                 eventName,
                 data: {
@@ -55,7 +60,7 @@ async function main() {
         });
     });
 
-    redisConnection.on("push-data:request:*", async (message, channel) => {
+    redisConnection.on("push-user:request:*", async (message, channel) => {
         let requestId = message.requestId;
         let eventName = message.eventName;
 
@@ -63,7 +68,7 @@ async function main() {
         let successEvent = `${eventName}:success:${requestId}`;
         let failedEvent = `${eventName}:failed:${requestId}`;
 
-        const keys = ["id",
+        let keys = ["id",
             "first_name",
             "last_name",
             "email",
@@ -71,7 +76,7 @@ async function main() {
             "ip_address"
         ]
 
-        for (let i = 0; keys.length; i++) {
+        for (let i = 0; i < keys.length; i++) {
             if (!messageText.hasOwnProperty(keys[i])) {
                 redisConnection.emit(failedEvent, {
                     requestId,
@@ -86,7 +91,7 @@ async function main() {
 
         for (let key in messageText) {
             if (key === "id") {
-                if (parseInt(messageText[key]).isNaN() || parseInt(messageText[key] <= 0)) {
+                if (isNaN(parseInt(messageText[key])) || parseInt(messageText[key] <= 0)) {
                     redisConnection.emit(failedEvent, {
                         requestId,
                         eventName,
@@ -157,7 +162,7 @@ async function main() {
 
         id = parseInt(messageText);
 
-        if (id.isNan() || id <= 0) {
+        if (isNaN(id) || id <= 0) {
             if (persons[i].id == messageText.id) {
                 redisConnection.emit(failedEvent, {
                     requestId,
@@ -174,7 +179,7 @@ async function main() {
         let num;
 
         for (let i = 0; i < persons.length; i++) {
-            if (String(users[i].id) === messageText) {
+            if (String(persons[i].id) === messageText) {
                 person = persons[i];
                 num = i;
                 break;
@@ -182,13 +187,12 @@ async function main() {
         }
 
         if (Object.keys(person).length === 0) {
-            redisConnection.emit(failedEvent {
+            redisConnection.emit(failedEvent, {
                 requestId,
                 eventName,
                 data: {
                     message: "Error: User with that ID was not found"
                 }
-
             })
             return;
         }
@@ -215,11 +219,11 @@ async function main() {
         let successEvent = `${eventName}:success:${requestId}`;
         let failedEvent = `${eventName}:failed:${requestId}`;
 
-        let data = message.data.updates;
+        let updates = message.data.updates;
         let id = parseInt(messageText);
 
-        if (id.isNan() || id <= 0) {
-            redisConnection.emit(failedEvent {
+        if (isNaN(id) || id <= 0) {
+            redisConnection.emit(failedEvent, {
                 requestId,
                 eventName,
                 data: {
@@ -233,15 +237,15 @@ async function main() {
         let num;
 
         for (let i = 0; i < persons.length; i++) {
-            if (String(users[i].id) === messageText) {
+            if (String(persons[i].id) === messageText) {
                 num = i;
-                person = users[i];
+                person = persons[i];
                 break;
             }
         }
 
         if (Object.keys(person).length === 0) {
-            redisConnection.emit(failedEvent {
+            redisConnection.emit(failedEvent, {
                 requestId,
                 eventName,
                 data: {
@@ -271,10 +275,10 @@ async function main() {
                 })
                 return;
             }
-        }
+        
 
         if (key === "id") {
-            if (parseInt(updates[key]).isNaN() || parseInt(updates[key]) <= 0) {
+            if (isNaN(parseInt(updates[key])) || parseInt(updates[key]) <= 0) {
                 redisConnection.emit(failedEvent, {
                     requestId,
                     eventName,
@@ -286,12 +290,12 @@ async function main() {
             }
 
             for (let i = 0; i < persons.length; i++) {
-                if (String(updates[key]) == String(users[i][key])) {
+                if (String(updates[key]) == String(persons[i][key]) && String(updates[key]) !== id) {
                     redisConnection.emit(failedEvent, {
                         requestId,
                         eventName,
                         data: {
-                            message: "Error: User with that ID exists"
+                            message: "Error: Another user with that ID exists"
                         }
                     });
                     return;
@@ -313,10 +317,10 @@ async function main() {
                 person[key] = updates[key];
             }
 
-            persons[index] = person;
+            persons[num] = person;
 
             redisConnection.emit(successEvent, {
-                requestId: reqestId,
+                requestId: requestId,
                 data: {
                     "updated": person
                 },
@@ -324,6 +328,7 @@ async function main() {
             });
             return;
         }
+    }
     });
 }
 
