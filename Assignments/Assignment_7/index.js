@@ -1,34 +1,56 @@
 const express = require("express");
 const app = express();
-// const static = express.static(__dirname + "/public");
+const http = require("http").createServer(app);
+const io = require("socket.io")(http);
+const nrpSender = require("./nrp-sender-shim");
+const redisConnection = require("./redis-connection");
 
-const exphbs = require("express-handlebars");
+app.use(express.static(__dirname + '/public'));
 
-const Handlebars = require("handlebars");
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+})
 
-const handlebarsInstance = exphbs.create({
-    defaultLayout: false,
-    // Specify helpers which are only registered on this instance.
-    helpers: {
-        asJSON: (obj, spacing) => {
-            if (typeof spacing === "number")
-                return new Handlebars.SafeString(JSON.stringify(obj, null, spacing));
+io.on("connection", async (socket) => {
+    console.log("Connected to socket");
+    socket.emit("Listening");
 
-            return new Handlebars.SafeString(JSON.stringify(obj));
+    socket.on("receive", async (obj) => {
+        console.log("Received object")
+        let username = obj.username;
+        let query = obj.query;
+        let message = obj.message;
+
+        try {
+            let response = await nrpSender.sendMessage({
+                redis: redisConnection,
+                eventName: 'research',
+                data: {
+                    query
+                }
+            });
+
+            console.log("Sending object");
+            io.emit('search', {
+                username: username,
+                message: message,
+                results: response.results
+            });
+
+        } catch (e) {
+            console.log(e);
         }
-    },
-    partialsDir: ["views/partials/"]
-});
-
-app.engine("handlebars", handlebarsInstance.engine);
-app.set("view engine", "handlebars");
-
-app.get("/", (req, res) => { 
-    res.render("main")
-});
 
 
-app.listen(3000, () => {
+    })
+
+    socket.on('disconnect', () => {
+        console.log("Disconnected");
+    })
+
+})
+
+http.listen(3000, () => {
     console.log("We've now got a server!");
     console.log("Your routes will be running on http://localhost:3000");
 });
