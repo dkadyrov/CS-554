@@ -50,12 +50,11 @@
 \begin{solution}
     Since the individual log entry has to support a ranging number of customizable fields, it would make sense to store the entries in a unstructured database like MongoDB. \\
 
-    % If the users are technically savvy, I would let them submit, query, and see their log entries through an developer API. If they require a GUI to do these tasks, I would build a simple form where they can add additional fields. In the same GUI, I will have a search bar to query log entries and a profile type page to see their log entries. Although security is not mentioned in the problem statement, I would assume that the users will have a login to access the application.\\ 
+    A logging server will expect entries from different services which might be written in different languages. I think the easiest way to allow for log entry submittal, query, and see their entries would be through a request API. \\
     
     I think an Express server will be sufficient for this task.
 \end{solution}
 
-\newpage
 \begin{problem}[2]{Expense Reports}
     In this scenario, you are tasked with making an expense reporting web application. Users should be able to submit expenses, which are always of the same data structure: \texttt{id}, \texttt{user}, \texttt{isReimbursed}, \texttt{reimbursedBy}, \texttt{submittedOn}, \texttt{paidOn}, and \texttt{amount}. When an expense is reimbursed you will generate a PDF and email it to the user who submitted the expense. 
     
@@ -67,7 +66,9 @@
 \begin{solution}
     Since the data structure remains consistent, it makes sense to use a structured database like MySQL or PostGreSQL. The web server I would use is Express.\\
 
-    I will handle emails through the Node package ``nodemailer''. As much as I love \LaTeX (even to the extent of writing this assignment in it), it potentially has a large overhead for this simple task and in previous work projects I have had a great experience using other PDF generator tools like wkhtmltopdf and ReportLab. I guess it all depends on how detailed and pretty the PDFs are required to be. 
+    I will handle emails through the Node package ``nodemailer''. As much as I love \LaTeX (even to the extent of writing this assignment in it), it potentially has a large overhead for this simple task and in previous work projects I have had a great experience using other PDF generator tools like wkhtmltopdf and ReportLab. I guess it all depends on how detailed and pretty the PDFs are required to be. These packages allow to program the templating. \\
+
+    Users will input the expenses through an online form. 
 
 \end{solution}
 
@@ -89,6 +90,13 @@
     \end{itemize}
     Which Twitter API do you use? How would you build this so its expandable to beyond your local precinct? What would you do to make sure that this system is constantly stable? What would be your web server technology? What databases would you use for triggers? For the historical log of tweets? How would you handle the real time, streaming incident report? How would you handle storing all the media that you have to store as well? What web server technology would you use?
 \end{problem}
+
+\begin{solution}
+    Twitter offers an API that allows developers to 
+    (\href{https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/premium-operators}{Twitter Rules and Filtering})
+
+
+\end{solution}
 
 \newpage
 \begin{problem}[4]{A Mildly Interesting Mobile Application}

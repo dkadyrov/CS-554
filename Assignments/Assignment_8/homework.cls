@@ -5,7 +5,7 @@
 \RequirePackage{geometry}
 \geometry{letterpaper, margin=1in}
 
-
+\RequirePackage{hyperref}
 \RequirePackage{fancyhdr}
 
 \pagestyle{fancy}
