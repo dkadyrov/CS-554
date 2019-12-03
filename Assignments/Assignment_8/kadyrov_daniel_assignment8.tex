@@ -48,13 +48,11 @@
 \end{problem}
 
 \begin{solution}
-    \[
-        \begin{split}
-        \text{Disk Capacity} & = 6 \text{ platters } \times 1100 \text{ sectors} \times 40,000 \text{ cylinders} \times 512 \text{ bytes} \\
-        &  = 135,168,000,000 \text{ bytes} \\
-        &  = \textbf{135.168 \text{ Gigabytes}}
-        \end{split}
-    \]
+    Since the individual log entry has to support a ranging number of customizable fields, it would make sense to store the entries in a unstructured database like MongoDB. \\
+
+    % If the users are technically savvy, I would let them submit, query, and see their log entries through an developer API. If they require a GUI to do these tasks, I would build a simple form where they can add additional fields. In the same GUI, I will have a search bar to query log entries and a profile type page to see their log entries. Although security is not mentioned in the problem statement, I would assume that the users will have a login to access the application.\\ 
+    
+    I think an Express server will be sufficient for this task.
 \end{solution}
 
 \newpage
@@ -65,6 +63,13 @@
 
     How would you store your expenses? What web server would you choose, and why? How would you handle the emails? How would you handle the PDF generation? How are you going to handle all the templating for the web application?
 \end{problem}
+
+\begin{solution}
+    Since the data structure remains consistent, it makes sense to use a structured database like MySQL or PostGreSQL. The web server I would use is Express.\\
+
+    I will handle emails through the Node package ``nodemailer''. As much as I love \LaTeX (even to the extent of writing this assignment in it), it potentially has a large overhead for this simple task and in previous work projects I have had a great experience using other PDF generator tools like wkhtmltopdf and ReportLab. I guess it all depends on how detailed and pretty the PDFs are required to be. 
+
+\end{solution}
 
 \newpage
 \begin{problem}[3]{A Twitter Streaming Safety Service}
